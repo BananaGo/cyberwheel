@@ -110,6 +110,17 @@ Once all dependencies are installed:
 
 *On newer OSX systems running on silicone chips, there may be an error installing the `pygraphviz` package, with poetry not finding the graphviz configuration files. You can work around this by pip installing the pygraphviz package manually, explicitly passing graphviz config paths. [This link](https://stackoverflow.com/a/70439868) helped me work through this issue.*
 *Feel free to comment this package out of the requirements.txt if you want to use cyberwheel without the visualizations and debug this package installation separately.*
+``Clang`` should also look into the right direction:
+```bash
+export CFLAGS="-I$(brew --prefix graphviz)/include"
+export LDFLAGS="-L$(brew --prefix graphviz)/lib"
+```
+
+#### Alternatively via pip
+```bash
+.venv/bin/python -m pip matplotlib numpy==1.26.4 pandas
+.venv/bin/python -m pip install "cyberwheel @ git+https://github.com/BananaGo/cyberwheel.git"
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
