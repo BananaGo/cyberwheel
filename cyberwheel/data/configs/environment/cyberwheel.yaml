@@ -9,3 +9,4 @@ host_config: host_defs_services.yaml
 num_steps: 50
 num_episodes: 10
 deterministic: false
+debug_mode: false
